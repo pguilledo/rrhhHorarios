@@ -166,7 +166,7 @@ function calcularPermanencia(horaIngreso, fichadas, Horario, TLibre) {
 }
 
 function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) {
-	mostrar2();
+     //mostrar2();
     var compensa = compensacion(tiempos,horaIngreso, Horario, TLibre);
 	var style='';
 	if (tiempos.enEdificio<6*60*60*1000)

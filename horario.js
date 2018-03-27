@@ -1,6 +1,12 @@
-//V 2.7 2018-03-07
+//V 2.8 2018-03-27
 if (window.location.pathname === "/portal/mis_fichadas") {
-	
+	_Horario();
+}	
+if (window.location.pathname === "/portal/novedades_asistencia") {
+       _Asistencia();
+}	
+
+function _Horario(){
     $.getScript("http://momentjs.com/downloads/moment-with-locales.min.js", function() {
         moment.locale("es");
         //8:00 hs
@@ -13,15 +19,12 @@ if (window.location.pathname === "/portal/mis_fichadas") {
     });
 }
 
-if (window.location.pathname === "/portal/novedades_asistencia") {
+function _Asistencia(){
     $.getScript("http://momentjs.com/downloads/moment-with-locales.min.js", function() {
         moment.locale("en");
-		asistencia();
+	asistencia();
     });
 }
-
-
-
 function calcular(Horario,TLibre) {
     var datos = $("main div.container div.row > div.col")[0];
     var n=nombreUsuario();

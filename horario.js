@@ -229,7 +229,7 @@ function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) 
 	var d = document.getElementById("resumen");
 	var l = document.getElementById("linkestilo");
 	if (l===null){
-		$('head').append('<link type="text/css" href="https://gtorresdx.github.io/rrhhHorario/Horario.css" rel="Stylesheet" id="linkestilo">')
+		$('head').append('<link type="text/css" href="https://gtorresdx.github.io/rrhhHorario/Horario.css" rel="Stylesheet" id="linkestilo">');
 	}
     if (d===null){
 		var response;

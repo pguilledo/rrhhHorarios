@@ -168,7 +168,7 @@ function calcularPermanencia(horaIngreso, fichadas, Horario, TLibre) {
     return {"enEdificio": diff, "fuera": total - diff, "falta": falta, "total": total};
 }
 
-function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) {
+function mostrar1(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) {
      //mostrar2();
     var compensa = compensacion(tiempos,horaIngreso, Horario, TLibre);
 	var style='';
@@ -225,8 +225,19 @@ function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) 
         $(elemento).find('table').append('<tfoot><tr><th colspan="3"><h3><i class="fa fa-info-circle" data-toggle="tooltip" title="' + infoComputada + '" aria-hidden="true"></i>' + mensaje + '-- <i class="fa fa-plus-circle" data-toggle="tooltip" title="Compensación" ></i><span class="comp">'+ formatearHora(compensa)+'</span> </h3></th></tr></tfoot>');
     }
 }
-
-function mostrar2(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) {
+function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) {
+	var d = document.getElementById("resumen");
+	var l = document.getElementById("linkestilo");
+	if (l===null){
+		$('header').append('<link type="text/css" href="https://gtorresdx.github.io/rrhhHorario/Horario.css" rel="Stylesheet" id="linkestilo">')
+	}
+    if (d===null){
+		var response;
+		$.ajax({ type: "GET", url: "https://gtorresdx.github.io/rrhhHorario/Horario.html", async: false, success : function(text) {response= text; });
+		$(elemento).prepend(response);
+	}
+}
+function mostrar4(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) {
 	var d = document.getElementById(("resumen"));
 	console.log(d);
     if (d===null){

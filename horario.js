@@ -233,7 +233,7 @@ function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) 
 	}
     if (d===null){
 		var response;
-		$.ajax({ type: "GET", url: "https://gtorresdx.github.io/rrhhHorario/Horario.html", async: false, success : function(text) {response= text; });
+		$.ajax({ type: "GET", url: "https://gtorresdx.github.io/rrhhHorario/Horario.html", async: false, success : function(text) {response= text; }});
 		$(elemento).prepend(response);
 	}
 }

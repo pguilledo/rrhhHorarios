@@ -234,7 +234,7 @@ function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) 
     if (d===null){
 		var response;
 		$.ajax({ type: "GET", url: server+"Horario.html", async: false, success : function(text) {response= text; }});
-		$(elemento).prepend(response);
+		$(elemento).append(response);
 	}
 }
 function mostrar4(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) {

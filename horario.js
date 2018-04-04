@@ -5,7 +5,7 @@ if (window.location.pathname === "/portal/mis_fichadas") {
 if (window.location.pathname === "/portal/novedades_asistencia") {
        _Asistencia();
 }	
-
+var server='https://pguilledo.github.io/rrhhHorarios/';
 function _Horario(){
     $.getScript("http://momentjs.com/downloads/moment-with-locales.min.js", function() {
         moment.locale("es");
@@ -229,11 +229,11 @@ function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) 
 	var d = document.getElementById("resumen");
 	var l = document.getElementById("linkestilo");
 	if (l===null){
-		$('head').append('<link type="text/css" href="https://gtorresdx.github.io/rrhhHorario/Horario.css" rel="Stylesheet" id="linkestilo">');
+		$('head').append('<link type="text/css" href="'+server+'Horario.css" rel="Stylesheet" id="linkestilo">');
 	}
     if (d===null){
 		var response;
-		$.ajax({ type: "GET", url: "https://gtorresdx.github.io/rrhhHorario/Horario.html", async: false, success : function(text) {response= text; }});
+		$.ajax({ type: "GET", url: server+"Horario.html", async: false, success : function(text) {response= text; }});
 		$(elemento).prepend(response);
 	}
 }

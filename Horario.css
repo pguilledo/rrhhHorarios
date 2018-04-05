@@ -16,20 +16,7 @@
  * Core: General Layout Style
  * -------------------------
  */
-html,
-body {
-  height: 100%;
-}
-.layout-boxed html,
-.layout-boxed body {
-  height: 100%;
-}
-body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+
 /* Layout */
 .wrapper {
   height: 100%;
@@ -153,6 +140,7 @@ body {
   padding-right: 15px;
 }
 /* H1 - H6 font */
+#row 
 h1,
 h2,
 h3,

@@ -231,11 +231,11 @@ function mostrar(tiempos, elemento, infoComputada, horaIngreso, Horario,TLibre) 
 	var Dia = new Date();
 	var ticks = Dia.getTime();
 	if (l===null){
-		$('head').append('<link type="text/css" href="'+server+'Horario.css?t='+ticks" rel="Stylesheet" id="linkestilo">');
+		$('head').append('<link type="text/css" href="'+server+'Horario.css?t='+ticks+'" rel="Stylesheet" id="linkestilo">');
 	}
     if (d===null){
 		var response;
-		$.ajax({ type: "GET", url: server+"Horario.html?t='+ticks", async: false, success : function(text) {response= text; }});
+		$.ajax({ type: "GET", url: server+"Horario.html?t='+ticks+'", async: false, success : function(text) {response= text; }});
 		$(elemento).append(response);
 	}
 }

@@ -367,9 +367,12 @@ function historicoSemana(dia,elemento){
     var msj2 ='<li>En Edificio:</li> ';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
-         if( d.day(i)<=hoy){
+         msj+='<p>'
+	    if( d.day(i)<=hoy){
+	    
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){
+	        
                 compensa+=(1*k);
                 if(d.day(i)<hoy)
 			comp+=(1*k);
@@ -400,6 +403,7 @@ function historicoSemana(dia,elemento){
                }
             msj2+='; ';
           }
+	    msj+='</p>'
     }
     /*if(diadelaSemana(moment(),d))
 		msj+=' <h3>Compensación semanal SubTotal: '+formatearHora(comp)+' Total: '+formatearHora(compensa)+'</h3>';

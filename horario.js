@@ -364,7 +364,7 @@ function historicoSemana(dia,elemento){
     var comp = 0;
     var Edif = 0;
     var msj ='<li>Compensación:</li>';
-    var msj2 ='En Edificio: ';
+    var msj2 ='<li>En Edificio:</li> ';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
          if( d.day(i)<=hoy){

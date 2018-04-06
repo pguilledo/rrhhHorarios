@@ -363,7 +363,7 @@ function historicoSemana(dia,elemento){
     var compensa=0;
     var comp = 0;
     var Edif = 0;
-    var msj ='Compensación: ';
+    var msj ='<li>Compensación:</li>';
     var msj2 ='En Edificio: ';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {

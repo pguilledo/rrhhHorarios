@@ -527,9 +527,9 @@ function historicoSemana(dia,elemento){
 	 msj+='<div class="col-md-2">';
 	 msj+='		<div class="box box-default">';
 	 msj+='			<div class="box-header with-border">';
-	 msj+='				<h3 class="box-title">Blank Box</h3>';
+	 msj+='				<h3 style="text-align:center;background-color:transparent;color:#444;font-variant:normal;" class="box-title">Blank Box</h3>';
 	 msj+='		        </div>';
-	 msj+='			<div class="box-body">15:00hs';
+	 msj+='			<div class="box-body" style="text-align:center;">15:00hs';
 	 msj+='			</div>';
          msj+='		</div>';
 	 msj+='</div>';

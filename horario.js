@@ -588,7 +588,7 @@ function historicoSemana(dia,elemento){
 		msj+=' <h3>Compensación semanal SubTotal: '+formatearHora(comp)+' Total: '+formatearHora(compensa)+'</h3>';
         else              
             msj+=' <h3>Compensación Total: '+formatearHora(compensa)+'</h3>';*/
-    msj+= +msj2;
+    msj+= '<p></p>' +msj2;
 	
    // msj+='<h3>Semana - en edificio: '+formatearHoraH(Edif)+'</h3>'
    $(elemento).find('span.hist').html(msj);

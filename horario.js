@@ -521,13 +521,14 @@ function historicoSemana(dia,elemento){
     var comp = 0;
     var Edif = 0;
     var msj ='Compensación:<ul class="todo-list>';
-    var msj2 ='En Edificio: ';
+    var msj2 ='En Edificio:<ul class="todo-list>';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
          if( d.day(i)<=hoy){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){
-                msj+='<span class="text">';
+                msj+='<li>'
+		msj+='<span class="text">';
 	        compensa+=(1*k);
                 if(d.day(i)<hoy)
 				comp+=(1*k);
@@ -545,12 +546,17 @@ function historicoSemana(dia,elemento){
                 msj+='</a>';
 				}
             msj+='; ';
+            msj+='</li>';
             //******
             k2=getCookie(n+d.day(i).format('DD-MM-YYYY')+'enEdificio');
             if (k2!==''){
+	       msj2+='</li>';
+	       msj2+='<span class="text">';
                Edif+=(1*k2);
                msj2+=d.day(i).format('dddd');
                msj2+=' '+formatearHora(1*k2);
+	       msj2+='</span>';
+	       msj2+='<div class="tools">';
                msj2+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                msj2+='<i class="fa fa-refresh"></i>';
                msj2+='</a>';
@@ -558,8 +564,10 @@ function historicoSemana(dia,elemento){
                msj2+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');
                msj2+=' '+formatearHora(0);
                msj2+='</a>';
+	       msj+='</div>
                }
             msj2+='; ';
+            msj2+='</li>';
           }
     }
     /*if(diadelaSemana(moment(),d))

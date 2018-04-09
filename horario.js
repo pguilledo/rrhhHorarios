@@ -523,7 +523,16 @@ function historicoSemana(dia,elemento){
     var msj ='Compensación:';
     var msj2 ='En Edificio:';
     var n=nombreUsuario();
-    for (var i = 1; i < 6; i += 1) {	        
+    for (var i = 1; i < 6; i += 1) {
+	 msj+='<div class="col-md-3 col-sm-6 col-xs-12">';
+	 msj+='		<span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>';
+	 msj+='		<div class="info-box-content">';
+	 msj+='			<div class="info-box-content">';
+	 msj+='				<span class="info-box-text">CPU Traffic</span>';
+	 msj+='				<span class="info-box-number">90<small>%</small></span>';
+	 msj+='			</div>';
+         msj+='		</div>';
+	 msj+='</div>';
          if( d.day(i)<=hoy){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){                

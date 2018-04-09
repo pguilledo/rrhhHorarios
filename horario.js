@@ -528,7 +528,7 @@ function historicoSemana(dia,elemento){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){
                 msj+='<li>'
-		msj+="<span class="handle ui-sortable-handle"><i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i></span>"
+		msj+='<span class="handle ui-sortable-handle"><i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i></span>';
 		msj+='<span class="text">';
 	        compensa+=(1*k);
                 if(d.day(i)<hoy)

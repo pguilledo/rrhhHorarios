@@ -534,17 +534,19 @@ function historicoSemana(dia,elemento){
 				comp+=(1*k);
                 msj+=d.day(i).format('dddd');
 		msj+='</span>';
-		msj+='<div class="tools">';
+		msj+='<small class="label label-default">';
                 msj+=' '+formatearHora(1*k);
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                 msj+='<i class="fa fa-refresh"></i>';
                 msj+='</a>';
-	        msj+='</div>';
+	        msj+='</small>';
                 }else{
+		msj+='<small class="label label-default">';
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');
                 msj+=' '+formatearHora(0);
                 msj+='</a>';
-				}
+	        msj+='</small>';
+            }
             //msj+='; ';
             msj+='</li>';
             //******

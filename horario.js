@@ -520,7 +520,7 @@ function historicoSemana(dia,elemento){
     var compensa=0;
     var comp = 0;
     var Edif = 0;
-    var msj ='<p>Compensación:</p>';
+    var msj ='Compensación:';
     msj+='<table class="table table-bordered table-hover">';
     var msj2 ='En Edificio:<ul class="todo-list">';
     var n=nombreUsuario();
@@ -534,7 +534,7 @@ function historicoSemana(dia,elemento){
 	        compensa+=(1*k);
                 if(d.day(i)<hoy)
 				comp+=(1*k);
-                msj+=d.day(i).format('dddd');
+                msj+='hola '+d.day(i).format('dddd');
 		msj+='</tr>';
 		msj+='<td style="text-align:center;">';
                 msj+=' '+formatearHora(1*k);

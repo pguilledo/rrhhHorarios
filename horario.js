@@ -525,11 +525,11 @@ function historicoSemana(dia,elemento){
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
 	 msj+='<div class="col-md-2">';
-	 msj+='		<span class="info-box-icon bg-aqua"><i class="fa fa-bell"></i></span>';
-	 msj+='		<div class="info-box-content">';
-	 msj+='			<div class="info-box-content">';
-	 msj+='				<span class="info-box-text">CPU Traffic</span>';
-	 msj+='				<span class="info-box-number">90<small>%</small></span>';
+	 msj+='		<div class="box box-default">';
+	 msj+='			<div class="box-header with-border">';
+	 msj+='				<h3 class="box-title">Blank Box</h3>';
+	 msj+='		        </div>';
+	 msj+='			<div class="box-body">15:00hs';
 	 msj+='			</div>';
          msj+='		</div>';
 	 msj+='</div>';

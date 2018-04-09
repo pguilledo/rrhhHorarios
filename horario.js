@@ -520,21 +520,25 @@ function historicoSemana(dia,elemento){
     var compensa=0;
     var comp = 0;
     var Edif = 0;
-    var msj ='Compensación: ';
+    var msj ='Compensación:<ul class="todo-list>';
     var msj2 ='En Edificio: ';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
          if( d.day(i)<=hoy){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){
-                compensa+=(1*k);
+                msj+='<span class="text">';
+	        compensa+=(1*k);
                 if(d.day(i)<hoy)
 				comp+=(1*k);
                 msj+=d.day(i).format('dddd');
+		msj+='</span>';
+		msj+='<div class="tools">';
                 msj+=' '+formatearHora(1*k);
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                 msj+='<i class="fa fa-refresh"></i>';
                 msj+='</a>';
+	        msj+='</div>
                 }else{
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');
                 msj+=' '+formatearHora(0);

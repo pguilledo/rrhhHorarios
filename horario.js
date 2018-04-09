@@ -521,7 +521,7 @@ function historicoSemana(dia,elemento){
     var comp = 0;
     var Edif = 0;
     var msj ='<p><li><b>Compensación:</b></li></p>';
-    var msj2 ='<b>En Edificio:</b></li>';
+    var msj2 ='<li><b>En Edificio:</b></li>';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {	 	 
          if( d.day(i)<=hoy){
@@ -588,7 +588,7 @@ function historicoSemana(dia,elemento){
 		msj+=' <h3>Compensación semanal SubTotal: '+formatearHora(comp)+' Total: '+formatearHora(compensa)+'</h3>';
         else              
             msj+=' <h3>Compensación Total: '+formatearHora(compensa)+'</h3>';*/
-    msj+= '<p></p>'+msj2;
+    //msj+= '<p></p>'+msj2;
 	
    // msj+='<h3>Semana - en edificio: '+formatearHoraH(Edif)+'</h3>'
    $(elemento).find('span.hist').html(msj);

@@ -521,10 +521,10 @@ function historicoSemana(dia,elemento){
     var comp = 0;
     var Edif = 0;
     var msj ='Compensación:';
-    msj+='<table class="table table-bordered table-hover">';
     var msj2 ='En Edificio:';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
+	        msj+='<table class="table table-bordered table-hover">';
          if( d.day(i)<=hoy){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){

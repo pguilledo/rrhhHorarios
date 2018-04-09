@@ -520,8 +520,8 @@ function historicoSemana(dia,elemento){
     var compensa=0;
     var comp = 0;
     var Edif = 0;
-    var msj ='Compensación:<ul class="todo-list>';
-    var msj2 ='En Edificio:<ul class="todo-list>';
+    var msj ='Compensación:<ul class="todo-list">';
+    var msj2 ='En Edificio:<ul class="todo-list">';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
          if( d.day(i)<=hoy){
@@ -545,7 +545,7 @@ function historicoSemana(dia,elemento){
                 msj+=' '+formatearHora(0);
                 msj+='</a>';
 				}
-            msj+='; ';
+            //msj+='; ';
             msj+='</li>';
             //******
             k2=getCookie(n+d.day(i).format('DD-MM-YYYY')+'enEdificio');
@@ -566,7 +566,7 @@ function historicoSemana(dia,elemento){
                msj2+='</a>';
 	       msj+='</div>';
                }
-            msj2+='; ';
+            //msj2+='; ';
             msj2+='</li>';
           }
     }

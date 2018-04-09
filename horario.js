@@ -530,7 +530,7 @@ function historicoSemana(dia,elemento){
 	        compensa+=(1*k);
                 if(d.day(i)<hoy)
 				comp+=(1*k);
-                msj+='d.day(i).format('dddd');				
+                msj+=d.day(i).format('dddd');				
                 msj+=' '+formatearHora(1*k);
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                 msj+='<i class="fa fa-refresh"></i>';

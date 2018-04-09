@@ -523,32 +523,24 @@ function historicoSemana(dia,elemento){
     var msj ='Compensación:';
     var msj2 ='En Edificio:';
     var n=nombreUsuario();
-    for (var i = 1; i < 6; i += 1) {
-	        msj+='<table class="table table-bordered table-hover">';
+    for (var i = 1; i < 6; i += 1) {	        
          if( d.day(i)<=hoy){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
-            if (k!==''){
-                //msj+='<li>'
-		//msj+='<span class="handle ui-sortable-handle"><i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i></span>';
-		msj+='<tr style="text-align:center;">';
+            if (k!==''){                
 	        compensa+=(1*k);
                 if(d.day(i)<hoy)
 				comp+=(1*k);
-                msj+='hola '+d.day(i).format('dddd');
-		msj+='</tr>';
-		msj+='<td style="text-align:center;">';
+                msj+='d.day(i).format('dddd');				
                 msj+=' '+formatearHora(1*k);
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                 msj+='<i class="fa fa-refresh"></i>';
-                msj+='</a>';
-	        msj+='</td>';
+                msj+='</a>';	        
                 }else{		
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');
                 msj+=' '+formatearHora(0);
                 msj+='</a>';
             }
-            msj+='; ';
-            msj+='</table>';
+            msj+='; ';            
             //******
             k2=getCookie(n+d.day(i).format('DD-MM-YYYY')+'enEdificio');
             if (k2!==''){	       

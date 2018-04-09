@@ -520,8 +520,8 @@ function historicoSemana(dia,elemento){
     var compensa=0;
     var comp = 0;
     var Edif = 0;
-    var msj ='<li><b>Compensación:</b></li><br>';
-    var msj2 ='<li><b>En Edificio:</b></li><br>';
+    var msj ='<p><li><b>Compensación:</b></li></p>';
+    var msj2 ='<p><b>En Edificio:</b></li></p>';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {	 	 
          if( d.day(i)<=hoy){
@@ -555,27 +555,40 @@ function historicoSemana(dia,elemento){
 	    msj+='</div>';
 		 
             //******
+	    msj2+='<div class="col-md-2">';
+	    msj2+='<div class="box box-danger">';
+		 
             k2=getCookie(n+d.day(i).format('DD-MM-YYYY')+'enEdificio');
             if (k2!==''){	       
                Edif+=(1*k2);
-               msj2+=d.day(i).format('dddd');
-               msj2+=' '+formatearHora(1*k2);	     
-               msj2+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
-               msj2+='<i class="fa fa-refresh"></i>';
-               msj2+='</a>';
+		msj2+='<div class="box-header with-border">';
+	        msj2+='	<h3 style="text-align:center;background-color:transparent;color:#444;font-variant:normal;" class="box-title">';	        
+                msj2+=d.day(i).format('dddd');
+		msj2+='	</h3>';
+	        msj2+='</div>';	
+		msj2+='<div class="box-body" style="text-align:center;">';
+                msj2+=''+formatearHora(1*k2);	  
+		msj2+='</div>';
+                msj2+='<div style="background:#f4f4f4;font-size:13px;" class="box-footer text-center">'
+                msj2+='	<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
+                msj2+='		<i class="fa fa-refresh"></i>';
+                msj2+='	</a>';
+		msj2+='</div>';    
                }else{
                msj2+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');
                msj2+=' '+formatearHora(0);
                msj2+='</a>';	     
                }
-            msj2+='; ';
+            //msj2+='; ';
+	    msj2+='</div>';
+	    msj2+='</div>';
           }
     }
     /*if(diadelaSemana(moment(),d))
 		msj+=' <h3>Compensación semanal SubTotal: '+formatearHora(comp)+' Total: '+formatearHora(compensa)+'</h3>';
         else              
             msj+=' <h3>Compensación Total: '+formatearHora(compensa)+'</h3>';*/
-//    msj+='<br/>'+msj2;
+    msj+= msj2;
 	
    // msj+='<h3>Semana - en edificio: '+formatearHoraH(Edif)+'</h3>'
    $(elemento).find('span.hist').html(msj);

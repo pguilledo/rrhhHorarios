@@ -528,18 +528,19 @@ function historicoSemana(dia,elemento){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){
                 msj+='<li>'
+		msj+="<span class="handle ui-sortable-handle"><i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i></span>"
 		msj+='<span class="text">';
 	        compensa+=(1*k);
                 if(d.day(i)<hoy)
 				comp+=(1*k);
                 msj+=d.day(i).format('dddd');
 		msj+='</span>';
-		msj+='<small style="padding:5px;" class="text">';
+		msj+='<span class="text">';
                 msj+=' '+formatearHora(1*k);
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                 msj+='<i class="fa fa-refresh"></i>';
                 msj+='</a>';
-	        msj+='</small>';
+	        msj+='</span>';
                 }else{
 		msj+='<small class="label label-default">';
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');

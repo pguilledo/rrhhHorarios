@@ -525,21 +525,18 @@ function historicoSemana(dia,elemento){
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
 	 msj+='<div class="col-md-2">';
-	 msj+='		<div class="box box-default">';
-	 msj+='			<div class="box-header with-border">';
-	 msj+='				<h3 style="text-align:center;background-color:transparent;color:#444;font-variant:normal;" class="box-title">Blank Box</h3>';
-	 msj+='		        </div>';
-	 msj+='			<div class="box-body" style="text-align:center;">15:00hs';
-	 msj+='			</div>';
-         msj+='		</div>';
-	 msj+='</div>';
+	 msj+='		<div class="box box-default">';	 
          if( d.day(i)<=hoy){
             k=getCookie(n+d.day(i).format('DD-MM-YYYY'));
             if (k!==''){                
 	        compensa+=(1*k);
                 if(d.day(i)<hoy)
 				comp+=(1*k);
-                msj+=d.day(i).format('dddd');				
+	        msj+='<div class="box-header with-border">';
+	        msj+='	<h3 style="text-align:center;background-color:transparent;color:#444;font-variant:normal;" class="box-title">';	        
+                msj+=d.day(i).format('dddd');
+		msj+='	</h3>
+		msj+='</div>';		    
                 msj+=' '+formatearHora(1*k);
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                 msj+='<i class="fa fa-refresh"></i>';
@@ -549,7 +546,12 @@ function historicoSemana(dia,elemento){
                 msj+=' '+formatearHora(0);
                 msj+='</a>';
             }
-            msj+='; ';            
+            msj+='; ';  
+	    msj+='			<div class="box-body" style="text-align:center;">15:00hs';
+	    msj+='			</div>';
+            msj+='		</div>';
+	    msj+='</div>';
+		 
             //******
             k2=getCookie(n+d.day(i).format('DD-MM-YYYY')+'enEdificio');
             if (k2!==''){	       

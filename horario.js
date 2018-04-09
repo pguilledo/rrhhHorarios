@@ -540,7 +540,7 @@ function historicoSemana(dia,elemento){
 		msj+='<div class="box-body" style="text-align:center;">';
                 msj+=''+formatearHora(1*k);
 		msj+='</div>';
-                msj+='<div class="box-footer text-center">'
+                msj+='<div style="background:#f4f4f4;" class="box-footer text-center">'
 		msj+='	<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')"> Actualizar';
                 msj+='		<i class="fa fa-refresh"></i>';
                 msj+='	</a>';	
@@ -550,7 +550,7 @@ function historicoSemana(dia,elemento){
                 msj+=' '+formatearHora(0);
                 msj+='</a>';
             }
-            msj+='; ';  	    	    	    	    
+            //msj+='; ';  	    	    	    	    
             msj+='</div>';
 	    msj+='</div>';
 		 

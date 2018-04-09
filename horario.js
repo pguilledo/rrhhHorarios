@@ -522,7 +522,7 @@ function historicoSemana(dia,elemento){
     var Edif = 0;
     var msj ='Compensación:';
     msj+='<table class="table table-bordered table-hover">';
-    var msj2 ='En Edificio:<ul class="todo-list">';
+    var msj2 ='En Edificio:';
     var n=nombreUsuario();
     for (var i = 1; i < 6; i += 1) {
          if( d.day(i)<=hoy){
@@ -541,37 +541,29 @@ function historicoSemana(dia,elemento){
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                 msj+='<i class="fa fa-refresh"></i>';
                 msj+='</a>';
-	        msj+='</th>';
-                }else{
-		msj+='<small class="label label-default">';
+	        msj+='</td>';
+                }else{		
                 msj+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');
                 msj+=' '+formatearHora(0);
                 msj+='</a>';
-	        msj+='</small>';
             }
-            //msj+='; ';
+            msj+='; ';
             msj+='</table>';
             //******
             k2=getCookie(n+d.day(i).format('DD-MM-YYYY')+'enEdificio');
-            if (k2!==''){
-	       msj2+='</li>';
-	       msj2+='<span class="text">';
+            if (k2!==''){	       
                Edif+=(1*k2);
                msj2+=d.day(i).format('dddd');
-               msj2+=' '+formatearHora(1*k2);
-	       msj2+='</span>';
-	       msj2+='<div class="tools">';
+               msj2+=' '+formatearHora(1*k2);	     
                msj2+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">';
                msj2+='<i class="fa fa-refresh"></i>';
                msj2+='</a>';
                }else{
                msj2+='<a href="javascript:ProcesarDia(\''+d.day(i).format('DD-MM-YYYY')+'\')">'+d.day(i).format('dddd');
                msj2+=' '+formatearHora(0);
-               msj2+='</a>';
-	       msj+='</div>';
+               msj2+='</a>';	     
                }
-            //msj2+='; ';
-            msj2+='</li>';
+            msj2+='; ';
           }
     }
     /*if(diadelaSemana(moment(),d))
